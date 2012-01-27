@@ -1,0 +1,41 @@
+Conway's Game of Life
+by Dennis Yeung
+
+Overview:
+An instance of Conway's Game of Life consists of an n x n-grid of cells, each of which can be either alive or dead. When the game begins, we specify an initial configuration of living and dead cells. The game then moves through successive generations, in which cells can either die, come to life, or stay the same, according to the following rules:
+
+- a living cell with fewer than two live neighbours or more than three live neighbours dies;
+- a living cell with two or three live neighbours continues to live
+- a dead cell with exactly three neighbours comes to life; otherwise, it remains dead.
+
+The neighbours of a cell are the eight cells that immediately surround it.
+
+The program quites when the input stream is exhausted.
+
+Commands:
+- new n: Creates a new n x n grid, where n >= 1. If there was already an active grid, that grid is destroyed and replaced with the new one.
+- init: Enters initialization mode. Subsequently, read pairs of integers 'x' & 'y' and set the cell at (x,y) as alive. 'x' represents the horizonta direction, and 'y' represents the vertical direction. The top-left corner is (0,0). The coordinates (-1,-1) ends initialization mode. It is possibly to enter initialization mode more than once, and even while the simulation is running.
+- step: Runs one tick of the simulation (i.e., transforms the grid into the immediately succeeding generation).
+- steps n: Runs 'n' steps of the simulation.
+- print: Prints the grid.
+
+Example:
+new 5
+init
+2 1
+2 2
+2 3
+-1 -1
+print
+_____
+__X__
+__X__
+__X__
+_____
+step
+print
+_____
+_____
+_XXX_
+_____
+_____
